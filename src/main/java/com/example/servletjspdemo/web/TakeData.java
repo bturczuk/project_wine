@@ -51,9 +51,9 @@ public class TakeData extends HttpServlet {
 	String strains[]= request.getParameterValues("strain");
 	strain = "";
 	if(strains != null){	
-	for(int i=0; i<strains.length; i++){
+		for(int i=0; i<strains.length; i++){
 			strain += strains[i] + ", ";		
-	}
+		}
 	}
 	else if (strains == null){
 		strain = "none selected";
@@ -72,9 +72,11 @@ public class TakeData extends HttpServlet {
 	String sweetness = null;
 	sweetness = request.getParameter("sweetness");
 	
-	String price;
-	price = request.getParameter("price");
-		
+	Float price = null;
+	if(request.getParameter("price") != null){
+		price = Float.parseFloat(request.getParameter("price"));
+	}
+	
 	System.out.println(strain);
 	
 	String body = "<html><body>"

@@ -7,10 +7,10 @@ public class Wines 	{
 		private String origin = ""; 
 		private String[] strain;
 		private String name = "";
-		private int year;
+		private int year = 2000;
 		private String sweetness = "";
 		private String alcohol = "";
-		private String price;
+		private float price;
 		private Long uuid = UUID.randomUUID().getLeastSignificantBits();
 	
 	public Wines()
@@ -22,7 +22,7 @@ public class Wines 	{
 
 	public Wines(String type, String origin, String[] strain,
 			String name, int year, String sweetness,
-			String alcohol, String price)
+			String alcohol, float price)
 	{
 		super();
 		this.type = type;
@@ -86,10 +86,10 @@ public class Wines 	{
 	}
 	
 	
-	public void setPrice(String price){
+	public void setPrice(float price){
 		this.price = price;
 	}
-	public String getPrice(){
+	public float getPrice(){
 		return price;
 	}
 	

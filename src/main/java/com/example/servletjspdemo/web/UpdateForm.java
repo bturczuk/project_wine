@@ -120,12 +120,12 @@ public class UpdateForm extends HttpServlet {
 		boolean dry = false;
 		if(request.getParameter("sweetness").toLowerCase().contains("Sweet".toLowerCase())) sweet = true;
 		if(request.getParameter("sweetness").toLowerCase().contains("Med-sweet".toLowerCase())) medsweet = true;
-		if(request.getParameter("sweetness").toLowerCase().contains("Sweet".toLowerCase())) dry = true;
+		if(request.getParameter("sweetness").toLowerCase().contains("Dry".toLowerCase())) dry = true;
 
-		
-		String price;
-		price = request.getParameter("price");
-		
+		Float price = null;
+		if(request.getParameter("price") != null){
+			price = Float.parseFloat(request.getParameter("price"));
+		}
 		
 		long ID = Long.parseLong(request.getParameter("uuid"));
 		

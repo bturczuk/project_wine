@@ -68,8 +68,10 @@ public class UpdateWine extends HttpServlet {
 		String sweetness = null;
 		sweetness = request.getParameter("sweetness");
 		
-		String price;
-		price = request.getParameter("price");
+		Float price = null;
+		if(request.getParameter("price") != null){
+			price = Float.parseFloat(request.getParameter("price"));
+		}
 		
 		long ID = Long.parseLong(request.getParameter("uuid"));
 		
